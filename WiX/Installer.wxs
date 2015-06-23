@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Product Name='SoundGenerator v1.0' Id='c849eb9a-7a8f-4d7c-ad97-414936597513' UpgradeCode='0062c872-59c4-4cd5-bae8-4e8fd39332ca'
+    Language='1033' Codepage='1252' Version='1.0.0' Manufacturer='Startrekdude Development'>
+
+    <Package Id='*' Keywords='Installer'
+      Description="SoundGenerator v1.0 Installer"
+      Comments=' ' Manufacturer='Startrekdude Developmentt'
+      InstallerVersion='100' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+
+    <Media Id='1' Cabinet='ProgramFiles.cab' EmbedCab='yes' DiskPrompt="CD-ROM #1" />
+    <Property Id='DiskPrompt' Value="SoundGenerator v1.0 Installation [1]" />
+	<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR"/>
+
+	
+	<Condition Message="You need to be an administrator to install this product.">
+		Privileged
+	</Condition>
+	<Condition Message="This application is only supported on Windows 7 or higher.">
+		<![CDATA[Installed OR (VersionNT >= 601)]]>
+	</Condition>
+	
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFilesFolder' Name='PFiles'>
+        <Directory Id='SHDev' Name='SHDev'>
+          <Directory Id='INSTALLDIR' Name='SoundGenerator v1.0'>
+
+            <Component Id='MainExecutable' Guid='30bd76c9-1226-411d-b318-2fff3b64fb5d'>
+              <File Id='ConsoleEXE' Name='SoundGenerator.exe' DiskId='1' Source='SoundGenerator.exe' KeyPath='yes'>
+                <Shortcut Id="startmenuConsole" Directory="ProgramMenuDir" Name="SoundGenerator v1.0 Console" WorkingDirectory='INSTALLDIR' Icon="SoundGenerator.exe" IconIndex="0" Advertise="yes" />
+                <Shortcut Id="desktopFoobar10" Directory="DesktopFolder" Name="SoundGenerator v1.0 Console" WorkingDirectory='INSTALLDIR' Icon="SoundGenerator.exe" IconIndex="0" Advertise="yes" />
+              </File>
+			  <File Id='IKVM' Name='IKVM.Runtime.dll' DiskId='1' Source='IKVM.Runtime.dll'>
+			  </File>
+			  <File Id='MIDI' Name='MIDI.dll' DiskId='1' Source='MIDI.dll'>
+			  </File>
+			  <File Id='IKVMCORE' Name='IKVM.OpenJDK.Core.dll' DiskId='1' Source='IKVM.OpenJDK.Core.dll'>
+			  </File>
+			  <File Id='IKVMUTIL' Name='IKVM.OpenJDK.Util.dll' DiskId='1' Source='IKVM.OpenJDK.Util.dll'>
+			  </File>
+            </Component>
+			<Component Id='GUIExecutable' Guid='8a199f7b-0f54-4c90-8430-2689de56f532'>
+			  <File Id='MODERNUI' Name='FirstFloor.ModernUI.dll' DiskId='1' Source='FirstFloor.ModernUI.dll'>
+			  </File>
+			  <File Id='MSWINSHELL' Name='Microsoft.Windows.Shell.dll' DiskId='1' Source='Microsoft.Windows.Shell.dll'>
+			  </File>
+			  <File Id='UICONFIG' Name='SoundGeneratorUI.exe.config' DiskId='1' Source='SoundGeneratorUI.exe.config'>
+			  </File>
+			  <File Id='UI' Name='SoundGeneratorUI.exe' DiskId='1' Source='SoundGeneratorUI.exe' KeyPath='yes'>
+				<Shortcut Id='startmenuUI' Directory='ProgramMenuDir' Name='SoundGenerator v1.0 GUI' WorkingDirectory='INSTALLDIR' Icon='SoundGeneratorUI.exe' IconIndex='0' Advertise='yes' />
+				<Shortcut Id='desktopUI' Directory='DesktopFolder' Name='SoundGenerator v1.0 GUI' WorkingDirectory='INSTALLDIR' Icon='SoundGeneratorUI.exe' IconIndex='0' Advertise='yes' />
+			  </File>
+			</Component>
+
+            <!-- <Component Id='Manual' Guid='4adea849-8fdc-498f-ac92-84dfefb73317'>
+              <File Id='Manual' Name='Manual.chm' DiskId='1' Source='Manual.chm' KeyPath='yes'>
+                <Shortcut Id="startmenuManual" Directory="ProgramMenuDir" Name="Instruction Manual" Advertise="yes" />
+              </File>
+            </Component> -->
+
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="SoundGenerator v1.0">
+          <Component Id="ProgramMenuDir" Guid="b0031cf6-499c-4b9b-92de-9d7978d992f7">
+            <RemoveFolder Id='ProgramMenuDir' On='uninstall' />
+            <RegistryValue Root='HKCU' Key='Software\SHDev\SoundGenerator' Type='string' Value='' KeyPath='yes' />
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+
+    <Feature Id='Complete' Title='SoundGenerator v1.0' Description='The complete package.'
+      Display='expand' Level='1' ConfigurableDirectory='INSTALLDIR'>
+      <Feature Id='MainProgram' Title='Program' Description='The main executable.' Level='1'>
+        <ComponentRef Id='MainExecutable' />
+		<ComponentRef Id='GUIExecutable' />
+        <ComponentRef Id='ProgramMenuDir' />
+      </Feature>
+
+      <!-- <Feature Id='Documentation' Title='Description' Description='The instruction manual.' Level='1000'>
+        <ComponentRef Id='Manual' />
+      </Feature> -->
+    </Feature>
+
+    <UIRef Id="WixUI_Mondo" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+	<WixVariable Id="WixUILicenseRtf" Value="EULA.rtf" />
+	
+    <Icon Id="SoundGenerator.exe" SourceFile="SoundGenerator.exe" />
+	<Icon Id='SoundGeneratorUI.exe' SourceFile='SoundGeneratorUI.exe' />
+
+  </Product>
+</Wix>

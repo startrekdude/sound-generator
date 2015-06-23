@@ -1,0 +1,19 @@
+﻿Random Sound Command Help: Generate Random Sound
+
+Command Syntax (How you type it in): random-sound [SampleRate] [SecondsLong] {FileName}
+
+Example: random-sound Normal 10 Noise
+The Example will create a aac file called Noise with a Normal sample rate 10 seconds long full of random noise.
+
+[SampleRate] is a value controlling the quality of the audio produced. From lowest to highest, valid values are:
+- LowQuality
+- Small
+- CDXA
+- Normal
+- Professional
+- Huge
+
+[SecondsLong] is a value between 0 and 65535 stating how many seconds of random noise to create
+
+{FileName} is an optional value used to specify the file name of the created noise. If not specified, will default to "default".
+Files are placed in the Music directory by Default

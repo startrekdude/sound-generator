@@ -1,0 +1,15 @@
+﻿<mui:ModernWindow x:Class="MuiTest.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+  Title="SoundGenerator v1.0 GUI" Height="700" Width="1050">
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="Sound Generator" >
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Generate Random Sound" Source="/GenerateRandomSound.xaml"/>
+                <mui:Link DisplayName="Advanced Options" Source="/AdvancedOptions.xaml"/>
+                <mui:Link DisplayName="Convert File Types" Source="/FileConverter.xaml"/>
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

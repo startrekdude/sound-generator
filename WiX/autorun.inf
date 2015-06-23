@@ -1,0 +1,18 @@
+[autorun]
+action=Install SoundGenerator v1.0
+icon=msiexec.exe
+label=SoundGenerator v1.0 Installation Disk
+open=msiexec.exe /i SoundGenerator-v1.0-x86.msi
+shell\net\command=dotNetFx40_Full_x86_x64.exe
+shell\net=Install the .NET Framework 4.0
+shell\vlc\command=vlc-2.1.5-win32.exe
+shell\vlc=Install VLC Media Player
+shell\kill\command=msiexec.exe /u SoundGenerator-v1.0-x86.msi
+shell\kill=Uninstall
+shell\open\command=msiexec.exe /i SoundGenerator-v1.0-x86.msi
+shell\open=Install
+shell=open
+[Content]
+MusicFiles=N
+PictureFiles=N
+VideoFiles=N

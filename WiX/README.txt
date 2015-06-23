@@ -1,0 +1,1 @@
+To use update-package, set ROOT to the correct location.

@@ -1,0 +1,14 @@
+﻿[EXPERIMENTAL] [BUGGY] [EXPERIMENTAL] [BUGGY] [EXPERIMENTAL] [BUGGY] [EXPERIMENTAL] [BUGGY] [EXPERIMENTAL] [BUGGY]
+Random Midi Command Help: Generate Random Midi File
+
+Command Syntax (How you type it in): random-midi-experimental [NoteNumber] [FileName]
+
+Example: random-midi-experimental 400 FourHundredNotes
+The Example will create a mid file called FourHundredNotes with 400 random notes.
+
+[NoteNumber] is a value between 0 and 65535 stating how many notes of random midi data to create
+
+[FileName] is a value specifying the name of the created MIDI File.
+Files are placed in the Music directory by default.
+
+[EXPERIMENTAL] [BUGGY] [EXPERIMENTAL] [BUGGY] [EXPERIMENTAL] [BUGGY] [EXPERIMENTAL] [BUGGY] [EXPERIMENTAL] [BUGGY]

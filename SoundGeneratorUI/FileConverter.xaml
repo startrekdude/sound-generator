@@ -1,0 +1,30 @@
+﻿<Page x:Class="SoundGeneratorUI.FileConverter"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="File Converter">
+
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer>
+            <StackPanel Margin="0" Visibility="Visible">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}"></Style>
+                    <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}"></Style>
+                    <Style TargetType="ListBox" BasedOn="{StaticResource {x:Type ListBox}}"></Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}"></Style>
+                </StackPanel.Resources>
+                <Label Content="Please enter the name of the AAC File you would like to convert: " Name="inputFileInstructionLabel" FontSize="11" />
+                <TextBox Text="Input File Name Here" Name="inputFileTxtBox" Width='120' Margin="0,15,500,0" />
+                <Label Content="Please enter the name of the Output File you would like to make: " Name="outputFileInstructionLabel" Margin="0,20,0,0" />
+                <TextBox Text="Output File Name Here" Name="outputFileTxtBox" Width="120" Margin="0,15,500,0" />
+                <Label Content="Please select your desired conversion format: " Name="formatInstructionLabel" Margin="0,20,0,0" />
+                <ListBox Name="formatListBox" Margin="20,0,0,0" />
+                <Button Content="Make Some NOISE!!!" Margin="0,50,0,0" Name="submitButton" Click="submitButton_Click" />
+                <Label Content="" Margin="0,10,0,0" Visibility="Hidden" Name="errorLabel" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

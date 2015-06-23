@@ -1,0 +1,27 @@
+﻿Random Sound Command Help: Generate Random Sound
+
+Command Syntax (How you type it in): convert-aac [InputName] [OutputName] [Format]
+
+Example: convert-aac Noise WMANoise wma
+The Example will create a wma file called WMANoise.wma with the data present in Noise.aac.
+
+[InputName] is an value used to specify the input file name.
+
+[OutputName] is an value used to specify the output file name.
+
+[Format] is a value used to specify the new audio format, valid values are:
+ac3
+g722
+g726
+alac
+eac3
+flac
+g723_1
+mp2
+tta
+adx
+gsm
+opus
+speex
+ogg
+wma

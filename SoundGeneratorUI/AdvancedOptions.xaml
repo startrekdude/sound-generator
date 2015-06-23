@@ -1,0 +1,32 @@
+﻿<Page x:Class="SoundGeneratorUI.AdvancedOptions"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="AdvancedOptions">
+
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer Margin="0">
+            <StackPanel Margin="0" Visibility="Visible">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}"></Style>
+                    <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}"></Style>
+                    <Style TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}"></Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}"></Style>
+                </StackPanel.Resources>
+                <CheckBox Content="Enable Advanced Options" Width="175" Margin="0,15,55,0" Name="advancedOptionsEnable" Checked="advancedOptionsEnable_Checked" Unchecked="advancedOptionsEnable_Unchecked" />
+                <Label Content="[EXPERIMENTAL] Generate Random Midi File" Name="midiRandomIntroduce" Margin="25,25,0,0" Visibility="Hidden" />
+                <Label Content="Please enter a name for the Midi File: " Name="midiFileInstructions" Margin="30,10,0,0" Visibility="Hidden" />
+                <TextBox Text="Enter Name Here" Width="120" Name="midiFileNameTxtbox" Margin="0,10,500,0" Visibility="Hidden" />
+                <Label Content="Please enter the number of notes for the Midi File: " Name="midiNoteInstructions" Margin="30,10,0,0" FontSize="10.5" Visibility="Hidden" />
+                <TextBox Text="Enter Notes Here" Width="120" Name="midiNotesTxtBox" Margin="0,10,500,0" Visibility="Hidden" />
+                <Button Content="[EXPERIMENTAL] Submit" Margin="0,50,0,0" Name="submitButton" Click="submitButton_Click" Visibility="Hidden" />
+                <Label Content="" Margin="0,10,0,0" Visibility="Hidden" Name="errorLabel" />
+                <Label Content="Open Console Version" Name="consoleVersionLabel" Margin="25,25,0,0" Visibility="Hidden" />
+                <Button Content="Open Console" Name="openConsole" Width="300" Margin="0,10,500,0" Visibility="Hidden" Click="openConsole_Click" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

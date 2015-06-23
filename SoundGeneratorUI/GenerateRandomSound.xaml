@@ -1,0 +1,30 @@
+﻿<Page x:Class="SoundGeneratorUI.GenerateRandomSound"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="GenerateRandomSound">
+
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer>
+            <StackPanel Margin="0" Visibility="Visible">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}"></Style>
+                    <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}"></Style>
+                    <Style TargetType="ListBox" BasedOn="{StaticResource {x:Type ListBox}}"></Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}"></Style>
+                </StackPanel.Resources>
+                <Label Content="Please enter your desired file name here: " Name="fileNameInstructionLabel"/>
+                <TextBox Text="File Name Here" Name="fileNameTxtBox" Width='120' Margin="0,15,500,0" />
+                <Label Content="How long would you like the noise to be?" Name="lengthInstructionLabel" Margin="0,20,0,0" />
+                <TextBox Text="In Seconds, Please" Name="lengthTxtBox" Width="100" Margin="0,15,500,0" />
+                <Label Content="Please select your desired sound quality:" Name="qualityInstructionLabel" Margin="0,20,0,0" />
+                <ListBox Name="qualityListBox" Margin="20,0,0,0" />
+                <Button Content="Make Some NOISE!!!" Margin="0,50,0,0" Name="submitButton" Click="submitButton_Click" />
+                <Label Content="" Margin="0,10,0,0" Visibility="Hidden" Name="errorLabel" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
